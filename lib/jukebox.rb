@@ -49,7 +49,7 @@ def run
   user_input = gets.strip
   
   if user_input == "exit"
-    exit
+    exit_jukebox
   end
   
   
