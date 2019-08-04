@@ -21,7 +21,6 @@ end
 def play(songs_array)
   puts "Please enter a song name or number:"
   user_response_input = gets.strip
-  user_response_input
   
   songs_array.each_with_index do |index,song_name|
     if user_response_input == song_name  
