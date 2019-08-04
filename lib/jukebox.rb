@@ -23,10 +23,12 @@ def play(songs)
   user_response_input = gets.strip
   
   songs.each_with_index(user_response_input) do |index,song_name|
+    if user_response_input == song_name 
       puts "Playing #{song_name}"
     else 
       puts "Invalid input, please try again."
     end
+  end
 end
 
 def list(songs) 
