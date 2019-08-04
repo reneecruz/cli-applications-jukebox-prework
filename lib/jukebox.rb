@@ -24,7 +24,7 @@ def play(songs_array)
   user_response_input
   
   songs_array.each_with_index do |index,song_name|
-    if user_response_input == song_name || index+1.to_s 
+    if user_response_input == song_name  
       return "Playing #{song}"
     else 
       return "Invalid input, please try again."
