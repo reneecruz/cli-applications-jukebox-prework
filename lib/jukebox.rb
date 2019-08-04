@@ -23,7 +23,7 @@ def play(songs_array)
   user_response_input = gets.strip
   user_response_input
   
-  songs_array.each_with_index do |index,song|
+  songs_array.each_with_index do |index,song_name|
     if user_response_input == song || index+1.to_s 
       return "Playing #{song}"
     else 
