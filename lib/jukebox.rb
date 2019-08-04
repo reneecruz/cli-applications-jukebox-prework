@@ -23,7 +23,7 @@ def play(songs)
   user_response_input = gets.strip
   
   songs.each_with_index do |index,song_name|
-    if user_response_input == song_name || songs[user_response_input.to_i]
+    if user_response_input == song_name || songs[user_response_input.to_i+1]
       puts "Playing #{song_name}"
     else 
       puts "Invalid input, please try again."
