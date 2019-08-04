@@ -32,7 +32,7 @@ def play(songs)
 end
 
 def list(songs) 
-  songs_array.each_with_index do |song_name, index|
+  songs.each_with_index do |song_name, index|
     puts "#{index+1}. #{song_name}"
   end
 end 
