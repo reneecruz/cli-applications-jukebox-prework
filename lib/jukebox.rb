@@ -23,11 +23,12 @@ def play(songs_array)
   user_response_input = gets.strip
   user_response_input
   
-  if user_response_input 
-    song_name = songs_array[user_response_input]
-    puts "Playing #{song_name}"
-  else 
-    puts "Invalid input, please try again."
+  songs_array.each_with_index do |index,song|
+    if user_response_input == song || index+1.to_s 
+      return "Playing #{song}"
+    else 
+      return "Invalid input, please try again."
+    end
   end
 end
 
