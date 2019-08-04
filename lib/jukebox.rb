@@ -24,6 +24,7 @@ def play(songs_array)
   user_response_input
   
   if user_response_input 
+    song_name = songs_array[user_response_input]
     puts "Playing #{song_name}"
   else 
     puts "Invalid input, please try again."
