@@ -22,11 +22,11 @@ end
 
 def play(songs)
   puts "Please enter a song name or number:"
-  user_response_input = gets.strip
+  response = gets.strip
   binding.pry
   
   songs.each_with_index do |index,song_name|
-    if user_response_input == song_name 
+    if response == song_name 
       if user_response_input == index+1.to_s
       puts "Playing #{song_name}"
     else 
