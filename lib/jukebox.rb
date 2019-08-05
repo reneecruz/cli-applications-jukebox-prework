@@ -23,7 +23,6 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   response = gets.strip
-  #binding.pry
   
   # determine if response is greater than or equal to 1 and less than array.length (or if its less than or equal to array.length -1)
   
@@ -50,8 +49,28 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run 
-  help 
-  puts "Please enter a command:"
-  user_input = gets.strip
+def run(songs)
+    puts "Please enter a command:"
+    user_input = gets.strip
+    
+    loop do 
+      case user_input
+        when "exit"
+          exit_jukebox
+          break
+        when "help"
+          help
+          puts "Please enter a command:"
+          user_input = gets.strip
+        when "play"
+          play(songs)
+          puts "Please enter a command:"
+          user_input = gets.strip
+        when "list"
+          list(songs)
+          puts "Please enter a command:"
+          user_input = gets.strip
+      end
+    end
+
 end
