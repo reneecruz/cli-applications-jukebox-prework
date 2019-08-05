@@ -1,3 +1,5 @@
+require "pry"
+
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -18,26 +20,38 @@ def help
   puts "- exit : exits this program"
 end 
 
-def play(songs_array)
+def play(songs)
   puts "Please enter a song name or number:"
-  user_response_input = gets.strip
-  user_response_input
+  response = gets.strip
+  #binding.pry
   
-  songs_array.each_with_index do |index,song|
-    if user_response_input == song || index+1.to_s 
-      return "Playing #{song}"
-    else 
-      return "Invalid input, please try again."
-    end
-  end
+  # determine if response is greater than or equal to 1 and less than array.length (or if its less than or equal to array.length -1)
+  
+       if response.to_i >= 1 && response.to_i <= songs.length - 1
+         puts "Playing #{songs[response.to_i-1]}"
+       elsif songs.include?(response)
+         song_name = songs.find do |song| 
+         song == response
+         end
+         puts "Playing #{song_name}"
+      else 
+         puts "Invalid input, please try again."
+      end
+ 
 end
 
-def list(songs_array) 
-  
-  songs_array.each_with_index do |song_name, index|
+def list(songs) 
+  songs.each_with_index do |song_name, index|
     puts "#{index+1}. #{song_name}"
   end
 end 
 
 def exit_jukebox
+  puts "Goodbye"
+end
+
+def run 
+  help 
+  puts "Please enter a command:"
+  user_input = gets.strip
 end
